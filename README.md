@@ -7,23 +7,26 @@ Window7 64-bit
 
 ### docker の install  
 <http://devcenter.magellanic-clouds.com/learning/docker-toolbox.html>  
-上記urlにしたがってDocker Toolboxをインストール。
+上記urlにしたがってDocker Toolboxをインストール。  
 
 ### 公開鍵の作成  
 **Docker Quickstart Terminal** を起動。  
 作業ディレクトリの作成＆移動  
-`$ mkdir docker`  
-`$ cd docker`  
+
+    $ mkdir docker  
+    $ cd docker  
+
 秘密鍵の作成  
-`$ ssh-keygen -f docker_centos`  
+    $ ssh-keygen -f docker_centos  
 
 ### docker image の作成  
-`$ cp (このディレクトリのパス)/dockerfile ./`  
-`$ docker build -t test_build ./`  
+    $ cp (このディレクトリのパス)/dockerfile ./  
+    $ docker build -t test_build ./  
+
 作成したイメージの詳細についてはdockerfileを参照。  
 
 ### コンテナ作成  
-`$ docker run --privileged -d -p 2222:22 -p 50050:80 -p 8888:8888 -v /c/Users/Abe/docker/Share:/share --name build test_build /sbin/init`  
+    $ docker run --privileged -d -p 2222:22 -p 50050:80 -p 8888:8888 -v /c/Users/Abe/docker/Share:/share --name build test_build /sbin/init  
 
 ### MySQL の初期化等
 #### 作成したコンテナにインタラクティブ操作でログイン  
@@ -63,4 +66,22 @@ apache HTTP server への接続
 ![apache](png/apache_homepage.PNG)  
 
 
+参考URL  
+CentOS 7のDockerコンテナ内でsystemdを使ってサービスを起動する  
+<http://qiita.com/yunano/items/9637ee21a71eba197345>  
+CentOS で公開鍵暗号方式を使用した SSH ログイン設定  
+<http://fnya.cocolog-nifty.com/blog/2012/03/centos-ssh-8291.html>  
+
+Dockerコンテナを作成してApache2.2を動かす  
+<http://qiita.com/na0AaooQ/items/31d02ae89b4501f11d5d>  
+ログファイルの場所(CustomLog, ErrorLog)  
+<https://www.adminweb.jp/apache/log/index1.html>  
+
+CentOS 7 に MySQL 5.7 を yum インストールして初期設定までやってみた  
+<http://enomotodev.hatenablog.com/entry/2016/09/01/225200>
+
+CentOS7環境でLaravelを構築する  
+<http://qiita.com/tosite0345/items/1e5bbeb33508abb1eaae>  
+CentOS 7.0のPHPを5.4から5.6にアップグレードした  
+<https://urashita.com/archives/7715>  
 
